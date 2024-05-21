@@ -1,4 +1,4 @@
-const products = [
+const Mobiles = [
     {
         name: 'product 1',
         price: 10,
@@ -35,4 +35,4 @@ const products = [
 
     },
 ]
-export default products
+export default Mobiles

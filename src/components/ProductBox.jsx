@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BasketCard = ({ imageSrc, name, price, quantity, removeItem }) => {
+const ProductBox = ({ name, imageSrc, price, addItem }) => {
     return (
         <div className='bg-zinc-200 p-2 m-2 rounded-md'>
             <img src={imageSrc} alt={name} />
@@ -9,14 +9,9 @@ const BasketCard = ({ imageSrc, name, price, quantity, removeItem }) => {
                 <p className='text-emerald-800 font-bold	'>price </p>
                 <p className='font-bold	'>${price}</p>
             </div>
-            <div className='flex justify-between mb-3'>
-                <p className='text-emerald-800 font-bold	'>QTY </p>
-                <p className='font-bold	'>{quantity}</p>
-            </div>
-            <button className='bg-rose-600 p-2 rounded text-white ' onClick={removeItem}>remove </button>
-
+            <button className='bg-cyan-600 p-2 rounded text-white ' onClick={addItem}>add item</button>
         </div>
     )
 }
 
-export default BasketCard
+export default ProductBox

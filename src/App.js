@@ -2,8 +2,9 @@ import React from 'react'
 import { useRoutes } from 'react-router-dom'
 import HomePage from './pages/Home.page'
 import NotFound from './components/NotFound'
-import ProductPage from './pages/Product.page'
-import BasketPage from './pages/Basket.page'
+import Mobile from './pages/Mobile.page.jsx'
+import BasketPage from './pages/Basket.page.jsx'
+import Productspage from './pages/Products.page.jsx'
 //import ProductPage from './pages/Product.component'
 const App = () => {
   const routes = useRoutes([
@@ -12,15 +13,20 @@ const App = () => {
       element: <HomePage />,
       children: [
         {
-          index: true,
-          element: <ProductPage />,
+          path : "product",
+          element : <Productspage/>,
         },
         {
-          path: '/basket',
+          path: 'basket',
           element: <BasketPage />,
+        },
+        {
+          path: 'Mobiles',
+          element: <Mobile />,
         },
       ]
     },
+    
     {
       path: '*',
       element: <NotFound />,
