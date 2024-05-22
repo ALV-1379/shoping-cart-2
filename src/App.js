@@ -5,7 +5,10 @@ import NotFound from './components/NotFound'
 import Mobile from './pages/Mobile.page.jsx'
 import BasketPage from './pages/Basket.page.jsx'
 import Productspage from './pages/Products.page.jsx'
-//import ProductPage from './pages/Product.component'
+import Camera from './pages/Camera.page.jsx'
+import Tv from './pages/Tv.page.jsx'
+import Laptop from './pages/Laptop.page.jsx'
+import MainProduct from './components/product components/MainProduct.jsx'
 const App = () => {
   const routes = useRoutes([
     {
@@ -13,8 +16,8 @@ const App = () => {
       element: <HomePage />,
       children: [
         {
-          path : "product",
-          element : <Productspage/>,
+          path: "products",
+          element: <Productspage />,
         },
         {
           path: 'basket',
@@ -24,9 +27,37 @@ const App = () => {
           path: 'Mobiles',
           element: <Mobile />,
         },
+        {
+          path: "Camera",
+          element: <Camera />
+        },
+        {
+          path: "TV",
+          element: <Tv />
+        },
+        {
+          path: "Laptops",
+          element: <Laptop />
+        },
+        {
+          path:"Mobiles/product/:id",
+          element:<MainProduct/>
+        },
+        {
+          path:"Camera/product/:id",
+          element:<MainProduct/>
+        },
+        {
+          path:"Laptops/product/:id",
+          element:<MainProduct/>
+        },
+        {
+          path:"TV/product/:id",
+          element:<MainProduct/>
+        },
       ]
     },
-    
+
     {
       path: '*',
       element: <NotFound />,
@@ -35,17 +66,7 @@ const App = () => {
   return (
     <>
       {routes}
-      {/* <Routes>
-        <Route path='/' element={<HomePage />} >
-           <Route path='categories' element={<CategoriesPage />} /> 
-          <Route path='product' element={<ProductPage />} /> 
-
-        </Route>
-
-        <Route path='/post/:id' element={<PostPage />} />
-
-        <Route path='*' element={<NotFound />} />
-      </Routes> */}
+   
     </>
   )
 }

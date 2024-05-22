@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 
 const Basket = () => {
     return (
@@ -8,4 +8,4 @@ const Basket = () => {
     )
 }
 
-export default Basket
+export default Basket */

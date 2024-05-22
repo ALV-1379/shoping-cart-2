@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonBaseDemo from '../components/Product'
+import ButtonBaseDemo from '../components/product components/Product'
 
 export default function Productspage() {
   return (

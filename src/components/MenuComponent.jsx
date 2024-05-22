@@ -15,7 +15,7 @@ const MenuComponent = () => {
                         isPending ? "text-gray-700" : isActive ? "text-blue-500" : "" 
                     }
                 >home</NavLink>
-                <NavLink to='product'
+                <NavLink to='products'
                     className={({ isActive, isPending }) =>
                         isPending ? "text-gray-700" : isActive ? "text-blue-500" : ""
                     }
