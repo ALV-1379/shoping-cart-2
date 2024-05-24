@@ -9,6 +9,7 @@ import Camera from './pages/Camera.page.jsx'
 import Tv from './pages/Tv.page.jsx'
 import Laptop from './pages/Laptop.page.jsx'
 import MainProduct from './components/product components/MainProduct.jsx'
+import Footer from './components/Footer/Footer.jsx'
 const App = () => {
   const routes = useRoutes([
     {
@@ -40,20 +41,20 @@ const App = () => {
           element: <Laptop />
         },
         {
-          path:"Mobiles/product/:id",
-          element:<MainProduct/>
+          path: "Mobiles/product/:id",
+          element: <MainProduct />
         },
         {
-          path:"Camera/product/:id",
-          element:<MainProduct/>
+          path: "Camera/product/:id",
+          element: <MainProduct />
         },
         {
-          path:"Laptops/product/:id",
-          element:<MainProduct/>
+          path: "Laptops/product/:id",
+          element: <MainProduct />
         },
         {
-          path:"TV/product/:id",
-          element:<MainProduct/>
+          path: "TV/product/:id",
+          element: <MainProduct />
         },
       ]
     },
@@ -64,10 +65,12 @@ const App = () => {
     }
   ])
   return (
-    <>
-      {routes}
-   
-    </>
+    <div className='flex flex-col min-h-screen'>
+      <div className=' flex-grow'>
+        {routes}
+      </div>
+      <Footer />
+    </div>
   )
 }
 

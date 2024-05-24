@@ -11,6 +11,7 @@ const BasketPage = () => {
                 return <BasketCard {...item} key={item.id} removeItem={() => removeBasketItem(item)} />
             })}
             <h2 className='text-center text-4xl'>totalPrice : {invoice.totalPrice}</h2>
+            
         </>
     )
 }

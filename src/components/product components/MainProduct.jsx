@@ -25,7 +25,7 @@ export default function ComplexGrid() {
     }) 
   
    
-        let { price, name, imageSrc , about} = { ...mainselect }
+        let { price, name, imageSrc , about , id} = { ...mainselect }
         const { addBasketItem } = useBasket((state) => state.actions)
 
         return (
@@ -55,7 +55,7 @@ export default function ComplexGrid() {
                                     {about}
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
-                                    ID: 1030114
+                                    id :{id}
                                 </Typography>
                             </Grid>
                             <Grid item>

@@ -8,9 +8,7 @@ const HomePage = () => {
     return (
         <>
             <MenuComponent />
-            <Outlet />
-            
-            
+            <Outlet />            
         </>
     )
 }
