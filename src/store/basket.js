@@ -68,9 +68,15 @@ export const useBasket = create(
                     }))
 
                 }),
+                clearall:()=>{
+                    set({
+                        items : [],
+                        invoice :{
+                            totalPrice : 0
+                        }
+                    })
+                }
             }
-
-
         }),
         {
             name: 'basket_items',

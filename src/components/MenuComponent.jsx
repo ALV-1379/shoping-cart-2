@@ -8,23 +8,23 @@ const MenuComponent = () => {
     const totalItems = accumulatorItems(items)
     return (
         <>
-            <div className='bg-sky-100 p-5 flex justify-between'>
+            <div className='bg-gray-900   p-5 flex justify-between'>
 
                 <NavLink to='/'
                     className={({ isActive, isPending }) =>
                         isPending ? "text-gray-700" : isActive ? "text-blue-500" : "" 
                     }
-                >home</NavLink>
+                >Home</NavLink>
                 <NavLink to='products'
                     className={({ isActive, isPending }) =>
                         isPending ? "text-gray-700" : isActive ? "text-blue-500" : ""
                     }
-                >product</NavLink>
+                >Product</NavLink>
                 <NavLink to='/basket'
                     className={({ isActive, isPending }) =>
                         isPending ? "text-gray-700" : isActive ? "text-blue-500" : ""
                     }
-                >basket {totalItems}</NavLink>
+                >Basket {totalItems}</NavLink>
             </div>
         </>
     )

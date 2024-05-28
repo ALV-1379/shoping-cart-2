@@ -2,16 +2,8 @@ import React from 'react'
 
 
 export default function Footer() {
-
-/*     const [socials] = useState([
-        { id: 1, href: 'https://www.youtube.com', img: '/images/youtube.png' },
-        { id: 2, href: 'https://twitter.com', img: '/images/twitter.png' },
-        { id: 3, href: 'https://www.facebook.com', img: '/images/facebook.png' },
-    ]) */
     return (
-        
-
-<div>
+        <div>
             <footer class="bg-white rounded-lg shadow dark:bg-gray-900  ">
                 <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
                     <div class="sm:flex sm:items-center sm:justify-between">
@@ -38,7 +30,7 @@ export default function Footer() {
                     <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flsowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.</span>
                 </div>
             </footer>
-            </div>
+        </div>
 
     )
 }

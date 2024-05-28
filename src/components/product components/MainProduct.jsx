@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
-import { Mobiles , cameras , Televisions , laptops } from '../../constans/product';
+import { Mobiles, cameras, Televisions, laptops } from '../../constans/product';
 import { useParams } from 'react-router-dom';
 import { useBasket } from '../../store/basket';
 import { Button } from '@mui/material';
@@ -17,62 +17,61 @@ const Img = styled('img')({
 });
 
 export default function ComplexGrid() {
-    let params = useParams()   
+    const { addBasketItem } = useBasket((state) => state.actions);
+    let params = useParams();
     const allProducts = [...Mobiles, ...cameras, ...laptops, ...Televisions];
 
-     let mainselect = allProducts.find((item) => {
-        return item.id == params.id
-    }) 
-  
-   
-        let { price, name, imageSrc , about , id} = { ...mainselect }
-        const { addBasketItem } = useBasket((state) => state.actions)
+    let mainselect = allProducts.find((item) => item.id == params.id);
 
-        return (
-            <Paper
-                sx={{
-                    p: 2,
-                    margin: 'auto',
-                    maxWidth: 700,
-                    flexGrow: 1,
-                    backgroundColor: (theme) =>
-                        theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-                }}
-            >
-                <Grid container spacing={2}>
-                    <Grid item>
-                        <ButtonBase sx={{ width: 700, height: 500 }}>
-                            <Img alt="complex" src={imageSrc} />
-                        </ButtonBase>
-                    </Grid>
-                    <Grid item xs={18} sm container>
-                        <Grid item xs container direction="column" spacing={2}>
-                            <Grid item xs>
-                                <Typography gutterBottom variant="subtitle1" component="div">
-                                    {name}
-                                </Typography>
-                                <Typography variant="body2" gutterBottom>
-                                    {about}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    id :{id}
-                                </Typography>
-                            </Grid>
-                            <Grid item>
-                                <Typography sx={{ cursor: 'pointer' }} variant="body2">
-                                    <Button variant="contained" onClick={() => addBasketItem(mainselect)}>add</Button>
-                                </Typography>
-                            </Grid>
+    if (!mainselect) {
+        return <h1 className='text-center mt-16'>this product is not exist</h1>;
+    }
+
+    let { price, name, imageSrc, about, id } = mainselect;
+
+    return (
+        <Paper
+            sx={{
+                p: 2,
+                margin: 'auto',
+                maxWidth: 700,
+                flexGrow: 1,
+                backgroundColor: (theme) =>
+                    theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+            }}
+        >
+            <Grid container spacing={2}>
+                <Grid item>
+                    <ButtonBase sx={{ width: 700, height: 500 }}>
+                        <Img alt="complex" src={imageSrc} />
+                    </ButtonBase>
+                </Grid>
+                <Grid item xs={12} sm container>
+                    <Grid item xs container direction="column" spacing={2}>
+                        <Grid item xs>
+                            <Typography gutterBottom variant="subtitle1" component="div">
+                                {name}
+                            </Typography>
+                            <Typography variant="body2" gutterBottom>
+                                {about}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                id: {id}
+                            </Typography>
                         </Grid>
                         <Grid item>
-                            <Typography variant="subtitle1" component="div">
-                                {price}
+                            <Typography sx={{ cursor: 'pointer' }} variant="body2">
+                                <Button variant="contained" onClick={() => addBasketItem(mainselect)}>add</Button>
                             </Typography>
                         </Grid>
                     </Grid>
+                    <Grid item>
+                        <Typography variant="subtitle1" component="div">
+                            {price}
+                        </Typography>
+                    </Grid>
                 </Grid>
-            </Paper>
-        );
-
-    }
-
+            </Grid>
+        </Paper>
+    );
+}
